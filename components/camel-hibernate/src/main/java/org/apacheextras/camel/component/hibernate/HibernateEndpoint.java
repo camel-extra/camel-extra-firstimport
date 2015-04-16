@@ -34,7 +34,6 @@ import org.hibernate.SessionFactory;
 
 /**
  * A Hibernate endpoint
- * 
  */
 public class HibernateEndpoint extends ScheduledPollEndpoint {
     private SessionFactory sessionFactory;
