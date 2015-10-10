@@ -44,8 +44,9 @@ public class ZeromqEndpoint extends DefaultEndpoint {
     private long highWaterMark = -1;
     private long linger = -1;
     private String topics;
+    private String mode;
     private boolean asyncConsumer = true;
-    private Class messageConvertor = DefaultMessageConvertor.class;
+    private Class<?> messageConvertor = DefaultMessageConvertor.class;
     private SocketFactory socketFactory;
     private ContextFactory contextFactory;
 
@@ -123,6 +124,7 @@ public class ZeromqEndpoint extends DefaultEndpoint {
         return linger;
     }
 
+    @SuppressWarnings("rawtypes")
     public Class getMessageConvertor() {
         return messageConvertor;
     }
@@ -146,6 +148,10 @@ public class ZeromqEndpoint extends DefaultEndpoint {
 
     public String getTopics() {
         return topics;
+    }
+
+    public String getMode() {
+        return mode;
     }
 
     public boolean isAsyncConsumer() {
@@ -172,7 +178,7 @@ public class ZeromqEndpoint extends DefaultEndpoint {
         this.linger = linger;
     }
 
-    public void setMessageConvertor(Class messageConvertor) {
+    public void setMessageConvertor(Class<?> messageConvertor) {
         this.messageConvertor = messageConvertor;
     }
 
@@ -190,6 +196,10 @@ public class ZeromqEndpoint extends DefaultEndpoint {
 
     public void setTopics(String topics) {
         this.topics = topics;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 
 }
