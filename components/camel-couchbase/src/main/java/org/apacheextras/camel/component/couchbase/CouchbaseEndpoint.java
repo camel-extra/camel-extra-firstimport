@@ -43,7 +43,7 @@ import static org.apacheextras.camel.component.couchbase.CouchbaseConstants.*;
  * and/or produce various type of operations.
  */
 
-@UriEndpoint(scheme = "couchbase", consumerClass = CouchbaseConsumer.class)
+@UriEndpoint(scheme = "couchbase", title = "CouchBase", syntax = "couchbase:url", consumerClass = CouchbaseConsumer.class)
 public class CouchbaseEndpoint extends ScheduledPollEndpoint {
 
     // URL stuff
